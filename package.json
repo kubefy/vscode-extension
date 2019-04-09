@@ -3,8 +3,9 @@
 	"displayName": "kubefy",
 	"description": "Kubefy VSCode extension",
 	"version": "0.0.1",
+	"publisher": "kubefy",
 	"engines": {
-		"vscode": "^1.33.0"
+		"vscode": "^1.23.0"
 	},
 	"categories": [
 		"Other"
@@ -16,16 +17,16 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.kubefy.user.init",
-				"title": "Init user workspace"
+				"command": "extension.kubefy.user.create",
+				"title": "Init kubefy user workspace"
 			},
 			{
-				"command": "extension.kubefy.fn.deploy",
-				"title": "Deploy function"
+				"command": "extension.kubefy.fn.create",
+				"title": "Deploy Knative function"
 			},
 			{
 				"command": "extension.kubefy.fn.view",
-				"title": "View function status"
+				"title": "View Knative function status"
 			}
 		]
 	},
