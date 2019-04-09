@@ -1,7 +1,7 @@
 {
 	"name": "kubefy",
 	"displayName": "kubefy",
-	"description": "Kubefy VSCode",
+	"description": "Kubefy VSCode extension",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.33.0"
@@ -10,14 +10,22 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"*"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.kubefy.user.init",
+				"title": "Init user workspace"
+			},
+			{
+				"command": "extension.kubefy.fn.deploy",
+				"title": "Deploy function"
+			},
+			{
+				"command": "extension.kubefy.fn.view",
+				"title": "View function status"
 			}
 		]
 	},
@@ -31,5 +39,9 @@
 		"eslint": "^5.13.0",
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"axios": "^0.18.0",
+		"configstore": "^4.0.0"
 	}
 }
