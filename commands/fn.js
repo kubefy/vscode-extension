@@ -34,6 +34,7 @@ async function createFn(params) {
             image: image,
             repo: gitRepo
         });
+        console.log('create function succeeded');
         vscode.window.showInformationMessage(response.data);
     } catch (err) {
         vscode.window.showWarningMessage(err);

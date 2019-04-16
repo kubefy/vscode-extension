@@ -27,6 +27,10 @@
 			{
 				"command": "extension.kubefy.fn.view",
 				"title": "View Knative function status"
+			},
+			{
+				"command": "extension.kubefy.storage.create",
+				"title": "Create Kubefy RGW S3 Storage"
 			}
 		]
 	},

@@ -23,9 +23,6 @@ async function createUser(params) {
     if (url) {
         conf.set('kubefy.url', url);
     }
-    if (userName) {
-        conf.set('kubefy.userName', userName);
-    }
 
     try {
         const response = await axios.post(url + '/users', {
@@ -38,7 +35,11 @@ async function createUser(params) {
             */
            userName: userName
         });
-        vscode.window.showInformationMessage(response.data);
+        console.log('create user succeeded');
+        if (response.data.userName) {
+            conf.set('kubefy.userName', response.data.userName);
+        }
+
     } catch (err) {
         vscode.window.showWarningMessage(err);
     }
