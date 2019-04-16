@@ -28,7 +28,11 @@ async function createStorage(params) {
         const response = await axios.post(url + '/storage', {
             userName: kubefy.userName
         });
-        console.log('create function succeeded');
+        console.log('create storage succeeded');
+        conf.set('kubefy.storage.bucket', response.data.bucket);
+        conf.set('kubefy.storage.endpoint', response.data.s3endpoint);
+        conf.set('kubefy.storage.s3id', response.data.s3access);
+        conf.set('kubefy.storage.s3secret', response.data.s3secret);
         vscode.window.showInformationMessage(response.data);
     } catch (err) {
         vscode.window.showWarningMessage(err);
